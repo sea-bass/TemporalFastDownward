@@ -897,7 +897,6 @@ if __name__ == "__main__":
     # pr = cProfile.Profile()
     # pr.enable()
     import pddl
-    import sys
 
     print("Parsing...")
     import builtins

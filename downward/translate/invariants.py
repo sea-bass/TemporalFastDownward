@@ -231,7 +231,7 @@ class SafeInvariant(Invariant):
         for part in self.parts:
             actions_to_check |= balance_checker.get_threats(part.predicate)
 
-        temp_unbalanced_actions = []
+        temp_unbalanced_actions = set()
         for action in actions_to_check:
             heavy_action = balance_checker.get_heavy_action(action.name)
             if self.operator_too_heavy(heavy_action):
@@ -319,8 +319,7 @@ class SafeInvariant(Invariant):
 
                         # add_effect is temporarily unbalanced
                         new_candidates = tuple(new_candidates)
-                        temp_unbalanced_actions.append((action, eff,
-                                                     new_candidates))
+                        temp_unbalanced_actions.add((action, eff, new_candidates))
 
         return False, None
 

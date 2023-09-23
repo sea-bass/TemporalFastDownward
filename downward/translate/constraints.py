@@ -75,7 +75,6 @@ class Assignment(object):
             if constants:
                 set_val = constants[0]
             else:
-                print(variables)
                 set_val = min(variables)
             for entry in eq_class:
                 mapping[entry] = set_val
