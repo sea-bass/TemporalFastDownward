@@ -24,7 +24,7 @@ from .f_expression import FunctionAssignment
 from .f_expression import NumericConstant
 from .f_expression import PrimitiveNumericExpression
 from .parser import ParseError
-from .pddl_file import open
+from .pddl_file import open_pddl
 from .pddl_types import Type
 from .pddl_types import TypedObject
 from .predicates import Predicate

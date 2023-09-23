@@ -897,12 +897,13 @@ if __name__ == "__main__":
     # pr = cProfile.Profile()
     # pr.enable()
     import pddl
+    import sys
 
     print("Parsing...")
     import builtins
 
     builtins.containsQuantifiedConditions = False
-    task = pddl.open()
+    task = pddl.open_pddl()
     if task.domain_name in ["protocol", "rover"]:
         # This is, of course, a HACK HACK HACK!
         # The real issue is that ALLOW_CONFLICTING_EFFECTS = True

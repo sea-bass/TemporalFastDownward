@@ -3,6 +3,7 @@
 
 from collections import defaultdict
 
+import pddl
 import build_model
 import normalize  # because of "get_function_predicate"
 import pddl_to_prolog

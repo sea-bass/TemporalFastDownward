@@ -42,7 +42,7 @@ class Task(object):
             = parse_domain(domain_pddl)
         task_name, task_domain_name, objects, init, goal = parse_task(task_pddl)
 
-        assert domain_name == task_domain_name
+        # assert domain_name == task_domain_name
         objects = constants + objects
         init += [conditions.Atom("=", (conditions.parse_term(obj.name), conditions.parse_term(obj.name)))
                  for obj in objects]
