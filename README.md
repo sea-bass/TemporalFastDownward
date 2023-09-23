@@ -1,6 +1,8 @@
 # TemporalFastDownward
 
-A slightly modified version of Temporal Fast Downward.
+A slightly modified version of Temporal Fast Downward meant to work with Python 3 for the purposes of using with [PlanSys2](https://plansys2.github.io/index.html).
+
+Credit to Caelan Garrett for beginning these modifications.
 
 ## Information
 
