@@ -1,8 +1,9 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: latin-1 -*-
 
 from collections import defaultdict
 
+import pddl
 import build_model
 import normalize  # because of "get_function_predicate"
 import pddl_to_prolog

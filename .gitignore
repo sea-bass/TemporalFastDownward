@@ -1,6 +1,7 @@
 .obj
 *.pyc
-output
-output.sas
+**/output
+**/output.sas
+**/pddlplan.1
 *.groups
 .idea

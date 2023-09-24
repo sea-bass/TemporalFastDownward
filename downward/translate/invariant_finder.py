@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: latin-1 -*-
 
 import itertools
@@ -7,7 +7,7 @@ from collections import deque, defaultdict
 
 import invariants
 import timers
-
+import pddl
 
 class BalanceChecker(object):
     def __init__(self, task, reachable_action_params, safe=True):
@@ -117,10 +117,10 @@ def find_invariants(task, safe, reachable_action_params):
             candidates.append(invariant)
             seen_candidates.add(invariant)
 
-    start_time = time.clock()
+    start_time = time.time()
     while candidates:
         candidate = candidates.popleft()
-        if time.clock() - start_time > MAX_TIME:
+        if time.time() - start_time > MAX_TIME:
             print("Time limit reached, aborting invariant generation")
             return
         if candidate.check_balance(balance_checker, enqueue_func):
@@ -151,7 +151,7 @@ def useful_groups(invariants, initial_facts):
 def get_groups(task, safe=True, reachable_action_params=None):
     with timers.timing("Finding invariants"):
         invariants = list(find_invariants(task, safe, reachable_action_params))
-    invariants = sorted(invariants)
+    # invariants = sorted(invariants)
     with timers.timing("Checking invariant weight"):
         result = list(useful_groups(invariants, task.init))
     return result

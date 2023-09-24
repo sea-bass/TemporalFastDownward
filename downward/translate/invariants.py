@@ -209,7 +209,7 @@ class Invariant(object):
         return "{%s}" % ", ".join(map(str, self.parts))
 
     def arity(self):
-        return iter(self.parts).next().arity()
+        return next(iter(self.parts)).arity()
 
     def get_parameters(self, atom):
         return self.predicate_to_part[atom.predicate].get_parameters(atom)
@@ -319,8 +319,7 @@ class SafeInvariant(Invariant):
 
                         # add_effect is temporarily unbalanced
                         new_candidates = tuple(new_candidates)
-                        temp_unbalanced_actions.add((action, eff,
-                                                     new_candidates))
+                        temp_unbalanced_actions.add((action, eff, new_candidates))
 
         return False, None
 

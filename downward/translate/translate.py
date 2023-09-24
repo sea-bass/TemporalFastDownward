@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: latin-1 -*-
 
 from __future__ import print_function
@@ -902,7 +902,7 @@ if __name__ == "__main__":
     import builtins
 
     builtins.containsQuantifiedConditions = False
-    task = pddl.open()
+    task = pddl.open_pddl()
     if task.domain_name in ["protocol", "rover"]:
         # This is, of course, a HACK HACK HACK!
         # The real issue is that ALLOW_CONFLICTING_EFFECTS = True
