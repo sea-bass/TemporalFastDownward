@@ -27,7 +27,6 @@ def open_pddl(task_filename=None, domain_filename=None):
                              "Usage: %s [<domain.pddl>] <task.pddl>" % sys.argv[0])
 
         task_filename = sys.argv[-1]
-        print(sys.argv)
         if len(sys.argv) == 3:
             domain_filename = sys.argv[1]
             print(f"Found domain filename: {domain_filename}")
